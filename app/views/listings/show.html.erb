@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @listing.title %>
+</p>
+
+<p>
+  <strong>Rent:</strong>
+  <%= @listing.rent %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @listing.type %>
+</p>
+
+<p>
+  <strong>Published at:</strong>
+  <%= @listing.published_at %>
+</p>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

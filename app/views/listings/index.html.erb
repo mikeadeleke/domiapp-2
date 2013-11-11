@@ -1,0 +1,33 @@
+<h1>Listing listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Rent</th>
+      <th>Type</th>
+      <th>Published at</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.title %></td>
+        <td><%= listing.rent %></td>
+        <td><%= listing.type %></td>
+        <td><%= listing.published_at %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>
