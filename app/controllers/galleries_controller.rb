@@ -1,6 +1,8 @@
 class GalleriesController < ApplicationController
+	before_action :load_listing
+
 	def create 
-		@gallery = @listing.galleries.new(gallery_params)
+		@gallery = @listing.galleries.new(params[:gallery])
 		if @gallery.save
 			redirect_to @listing, notice: "Your gallery is a success!"
 		else
@@ -9,6 +11,7 @@ class GalleriesController < ApplicationController
 	end
 
 	def destroy 
+		@listing = current_user.listings.find(params[:listing_id])
 		@gallery = @listing.galleries.find(params[:id])
 		@gallery.destroy
 		redirect_to @listing, notice: "Gallery go bye-bye"
