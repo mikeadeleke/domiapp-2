@@ -4,5 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   has_one :profile
-  has_many :articles, -> { order("published_at DESC, title ASC") }, dependent: :destroy
+  has_many :listings, -> { order("published_at DESC, title ASC") }, dependent: :destroy
+  has_many :pictures, :through => :listings, :source => :galleries
 end
