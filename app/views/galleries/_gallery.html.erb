@@ -1,0 +1,8 @@
+<%= div_for gallery do %>
+	<h3>
+		<%= gallery.name %> &lt;<%= gallery.email %>&gt; said:
+		<span class="actions">
+			<%= link_to 'Delete', [@listing, gallery], confirm: "You for real?", method: :delete %>
+		</span>
+	</h3>
+<% end %>

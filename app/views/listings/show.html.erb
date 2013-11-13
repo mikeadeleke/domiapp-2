@@ -1,24 +1,8 @@
-<p id="notice"><%= notice %></p>
+<%= render @listing %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @listing.title %>
-</p>
+<h3>Galleries</h3>
+<div id="galleries">
+	<%= render @listing.galleries %>
+</div>
 
-<p>
-  <strong>Rent:</strong>
-  <%= @listing.rent %>
-</p>
-
-<p>
-  <strong>Type:</strong>
-  <%= @listing.type %>
-</p>
-
-<p>
-  <strong>Published at:</strong>
-  <%= @listing.published_at %>
-</p>
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
-<%= link_to 'Back', listings_path %>
+<%= render file: "galleries/new" %>

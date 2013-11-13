@@ -7,10 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+<%= content_tag :p, notice, class: "notice" if notice.present? %>
+<%= content_tag :p, alert, class: "alert" if alert.present? %>
+<%= render 'layouts/header' %>
+<div class="container">
+	<%= yield %>
+</div>
 
-<%= yield %>
 
 </body>
 </html>
