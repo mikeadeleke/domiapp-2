@@ -1,6 +1,11 @@
 <%= div_for listing do %>
 	<h3>
+
+		<%= image_tag listing.image.url(:thumb) %>
 		<%= link_to listing.title, listing %>
+		<%= listing.rent %>
+		<%= listing.type %>
+		<%= listing.published_at %>
 		<span class="actions">
 			<%= link_to "Edit", edit_listing_path(listing) %>
 			<%= link_to "Delete", listing, confirm: "Do you really want to do this?", method: :delete %>

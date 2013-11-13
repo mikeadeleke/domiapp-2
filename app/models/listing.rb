@@ -3,6 +3,8 @@ class Listing < ActiveRecord::Base
 	belongs_to :user
 	has_and_belongs_to_many :categories
 	has_many :galleries
+	has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+
 
 	scope :published, lambda { where('listings.published_at IS NOT NULL') }
 	scope :draft, lambda { where("listings.published_at IS NULL") }
