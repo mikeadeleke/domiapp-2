@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
-  before_action :set_listing, only: [:show, :edit, :update, :destroy]
-  before_action :load_listing
+  # before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  # before_action :load_listing
 
   # GET /listings
   # GET /listings.json
@@ -68,7 +68,7 @@ class ListingsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def load_listing
-      @listing = Listing.find(params[:id])
+      @listing = Listing.find(params[:listing_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
