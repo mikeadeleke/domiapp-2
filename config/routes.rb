@@ -1,12 +1,13 @@
 Domiapp::Application.routes.draw do
-  devise_for :users
+  get "pages/home"
+
   resources :listings do
     resources :galleries
   end
 
-  root to: "listings#index"
+  root to: "pages#home"
 
-  match '/signup', to: "registrations#new", via: "get"
+ devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
